@@ -21,26 +21,14 @@
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
     font-family:'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    background:#E8EAED;
-    display:flex;
-    justify-content:center;
-    padding:40px 16px;
+    background:var(--bg);
     color:var(--text-1);
+    max-width:480px;
+    margin:0 auto;
   }
   .mono{ font-family:'IBM Plex Mono', monospace; }
-  .device{
-    width:390px;
-    max-width:100%;
-    background:var(--bg);
-    border-radius:44px;
-    box-shadow:0 25px 60px rgba(0,0,0,0.18);
-    overflow:hidden;
-    border:8px solid #111;
-    position:relative;
-  }
-  .screen{ height:844px; overflow-y:auto; position:relative; scrollbar-width:none; }
-  .screen::-webkit-scrollbar{display:none;}
-  .statusbar{ display:flex; justify-content:space-between; align-items:center; padding:16px 24px 6px; font-size:14px; font-weight:600; }
+  .screen{ min-height:100vh; position:relative; }
+  .statusbar{ display:flex; justify-content:flex-end; align-items:center; padding:16px 20px 6px; font-size:14px; font-weight:600; }
   .lang-toggle{ display:flex; background:#EEF0F3; border-radius:20px; padding:3px; font-size:11.5px; font-weight:600; }
   .lang-opt{ padding:5px 11px; border-radius:16px; color:var(--text-2); cursor:pointer; transition:background .15s ease, color .15s ease; }
   .lang-opt.active{ background:#fff; color:var(--text-1); box-shadow:0 1px 2px rgba(0,0,0,0.08); }
@@ -126,7 +114,7 @@
 
   /* ---------- bottom nav ---------- */
   .bottom-nav{
-    position:absolute; bottom:0; left:0; right:0; background:rgba(255,255,255,0.92); backdrop-filter:blur(20px);
+    position:fixed; bottom:0; left:0; right:0; max-width:480px; margin:0 auto; background:rgba(255,255,255,0.92); backdrop-filter:blur(20px);
     border-top:1px solid var(--line); display:flex; justify-content:space-around; padding:10px 6px calc(10px + 18px);
   }
   .nav-item{ display:flex; flex-direction:column; align-items:center; gap:4px; font-size:9.5px; color:var(--text-3); font-weight:500; cursor:pointer; width:64px; text-align:center; }
@@ -134,7 +122,7 @@
   .nav-item.active{ color:var(--blue-2); }
 
   /* ---------- bottom sheet ---------- */
-  .sheet-overlay{ position:absolute; inset:0; background:rgba(15,17,21,0.4); display:flex; align-items:flex-end; z-index:10; }
+  .sheet-overlay{ position:fixed; inset:0; max-width:480px; margin:0 auto; background:rgba(15,17,21,0.4); display:flex; align-items:flex-end; z-index:10; }
   .sheet{ width:100%; background:#fff; border-radius:24px 24px 0 0; padding:12px 24px 34px; animation:slideUp .32s cubic-bezier(.32,.72,0,1); max-height:82%; overflow-y:auto; }
   @keyframes slideUp{ from{transform:translateY(100%);} to{transform:translateY(0);} }
   .sheet-handle{ width:36px; height:4px; background:#E3E5E9; border-radius:10px; margin:0 auto 20px; }
@@ -199,12 +187,9 @@
   </defs>
 </svg>
 
-<div class="device">
-
   <!-- ============ LOGIN ============ -->
   <div class="screen hidden" id="loginScreen">
     <div class="statusbar">
-      <span>10:52</span>
       <div class="lang-toggle">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-2)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin:0 2px 0 4px;"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
         <div class="lang-opt active" id="lang-th-1" onclick="setLang('th')">ไทย</div>
@@ -248,7 +233,6 @@
   <!-- ============ CONSENT ============ -->
   <div class="screen" id="consentScreen">
     <div class="statusbar">
-      <span>10:52</span>
       <div class="lang-toggle">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-2)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin:0 2px 0 4px;"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
         <div class="lang-opt active" id="lang-th-3" onclick="setLang('th')">ไทย</div>
@@ -302,7 +286,7 @@
 
   <!-- ============ APP SHELL ============ -->
   <div class="screen hidden" id="appScreen">
-    <div class="statusbar"><span>10:52</span><span></span></div>
+    
 
     <!-- ---- นัดหมาย ---- -->
     <div class="page" id="pageAppointments">
@@ -504,7 +488,6 @@
       </div>
     </div>
   </div>
-</div>
 
 <script>
 function showScreen(id){
