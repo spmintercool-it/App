@@ -526,7 +526,7 @@ document.querySelectorAll('.terms-host').forEach(h => h.appendChild(document.get
     messagingSenderId: "536137022963",
     appId: "1:536137022963:web:eb1eaa8e9beb6698cfe686"
   };
-  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwVBv7HmZNgoCg8J0_17tY1EGdFuD4nNH9BqEn72IuUfjekP9TZasvyD_8qdRXQQFPCnw/exec";
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyJcJZ89kMTZPumGbT9U6FVW1c-AqFai5n5rw61TubxR-XgPEMsuk8M5Xj98dcZiIo7tg/exec";
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
@@ -539,7 +539,13 @@ document.querySelectorAll('.terms-host').forEach(h => h.appendChild(document.get
     btn.disabled = true;
     try {
       const lookup = await (await fetch(APPS_SCRIPT_URL + '?action=lookupEmail&username=' + encodeURIComponent(username))).json();
-      if (lookup.error) { alert('ไม่พบผู้ใช้นี้ในระบบ'); return; }
+      if (lookup.error) {
+        alert(lookup.error === 'not_found'
+          ? 'Apps Script ทำงานปกติ แต่ไม่พบ username นี้ในแท็บ Users ของ Sheet\n\nตรวจว่า: 1) แท็บชื่อ Users เป๊ะ 2) แถวแรกมีหัวคอลัมน์ username, email, custId 3) username สะกดตรงกัน'
+          : 'Apps Script ตอบกลับว่า: ' + lookup.error + '\n\nน่าจะยังไม่ได้ Deploy เวอร์ชันล่าสุด');
+        return;
+      }
+      if (!lookup.email) { alert('พบ username นี้ แต่ช่อง email ในแท็บ Users ว่างอยู่'); return; }
       await signInWithEmailAndPassword(auth, lookup.email, password);
       const data = await (await fetch(APPS_SCRIPT_URL + '?action=customerData&custId=' + encodeURIComponent(lookup.custId))).json();
       if (data.error) throw new Error(data.error);
