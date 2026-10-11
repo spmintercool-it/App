@@ -595,9 +595,22 @@ function openSheet(key){
       await loadCustomerData(lookup.custId);
       showScreen('appScreen');
     } catch (err) {
+      console.error(err);
       let msg = 'เข้าสู่ระบบไม่สำเร็จ';
       if (err.code === 'auth/invalid-credential' || err.code === 'auth/wrong-password' || err.code === 'auth/user-not-found') {
         msg = 'Username หรือรหัสผ่านไม่ถูกต้อง';
+      } else if (err.code === 'auth/invalid-email') {
+        msg = 'อีเมลของ username นี้ในแท็บ Users ของ Sheet ว่างหรือผิดรูปแบบ';
+      } else if (err.code === 'auth/unauthorized-domain') {
+        msg = 'โดเมนนี้ยังไม่อยู่ใน Authorized domains ของ Firebase';
+      } else if (err.code === 'auth/too-many-requests') {
+        msg = 'ลองผิดหลายครั้งเกินไป รอสักครู่แล้วลองใหม่';
+      } else if (err.code === 'auth/network-request-failed') {
+        msg = 'เชื่อมต่อ Firebase ไม่ได้ ตรวจอินเทอร์เน็ต';
+      } else if (err instanceof SyntaxError || /fetch/i.test(err.message || '')) {
+        msg = 'เชื่อมต่อ Apps Script ไม่ได้ หรือยังไม่ได้ Deploy เวอร์ชันล่าสุด';
+      } else {
+        msg += ' (' + (err.code || err.message) + ')';
       }
       alert(msg);
     }
