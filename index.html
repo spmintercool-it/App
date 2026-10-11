@@ -10,17 +10,17 @@
   :root{
     --blue-1:#4F9BFF;
     --blue-2:#1D4FC4;
-    --bg:#FAFBFC;
+    --bg:#FFFFFF;
     --card:#FFFFFF;
-    --line:#E9EBEF;
-    --text-1:#0F1115;
-    --text-2:#6B7280;
-    --text-3:#A0A5AD;
-    --radius:16px;
+    --line:#DADADA;
+    --text-1:#111111;
+    --text-2:#666666;
+    --text-3:#999999;
+    --radius:10px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
-    font-family:'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family:-apple-system, BlinkMacSystemFont, sans-serif;
     background:var(--bg);
     color:var(--text-1);
     max-width:480px;
@@ -29,67 +29,65 @@
   .mono{ font-family:'IBM Plex Mono', monospace; }
   .screen{ min-height:100vh; position:relative; }
   .statusbar{ display:flex; justify-content:flex-end; align-items:center; padding:16px 20px 6px; font-size:14px; font-weight:600; }
-  .lang-toggle{ display:flex; background:#EEF0F3; border-radius:20px; padding:3px; font-size:11.5px; font-weight:600; }
-  .lang-opt{ padding:5px 11px; border-radius:16px; color:var(--text-2); cursor:pointer; transition:background .15s ease, color .15s ease; }
-  .lang-opt.active{ background:#fff; color:var(--text-1); box-shadow:0 1px 2px rgba(0,0,0,0.08); }
+  .lang-toggle{ display:flex; border:1px solid var(--line); border-radius:8px; overflow:hidden; font-size:12px; font-weight:500; }
+  .lang-opt{ padding:5px 12px; color:var(--text-2); cursor:pointer; }
+  .lang-opt.active{ background:var(--blue-2); color:#fff; }
 
   /* ---------- brand mark (real logo) ---------- */
   .brandmark{ width:84px; margin:0 auto 22px; display:block; }
   .brandmark.sm{ width:44px; margin:0; }
 
   /* ---------- login / signup / consent ---------- */
-  .login-wrap{ display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:calc(844px - 50px); padding:20px 32px 40px; text-align:center; }
-  .login-title{ font-size:24px; font-weight:700; margin-bottom:8px; letter-spacing:-0.02em; }
+  .login-wrap{ display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:calc(100vh - 50px); padding:20px 32px 40px; text-align:center; }
+  .login-title{ font-size:22px; font-weight:600; margin-bottom:8px; }
   .login-sub{ font-size:14px; color:var(--text-2); margin-bottom:40px; line-height:1.6; }
   .input-group{ width:100%; text-align:left; margin-bottom:16px; }
   .input-label{ font-size:13px; color:var(--text-2); margin-bottom:6px; display:block; font-weight:500; }
   .input-field{
-    width:100%; padding:14px 16px; border-radius:12px; border:1px solid var(--line);
-    background:#fff; font-size:15px; font-family:inherit;
-    transition:border-color .2s ease, box-shadow .2s ease; outline:none;
+    width:100%; padding:13px 14px; border-radius:8px; border:1px solid var(--line);
+    background:#fff; font-size:15px; font-family:inherit; outline:none;
   }
-  .input-field:focus{ border-color:var(--blue-1); box-shadow:0 0 0 4px rgba(79,155,255,0.12); }
+  .input-field:focus{ border-color:var(--blue-2); }
   .btn-primary{
-    width:100%; padding:15px; border:none; border-radius:12px;
-    background:linear-gradient(135deg, var(--blue-1), var(--blue-2));
-    color:#fff; font-size:15px; font-weight:600; font-family:inherit; margin-top:12px; cursor:pointer;
-    transition:transform .15s ease, box-shadow .15s ease; box-shadow:0 8px 20px rgba(29,79,196,0.22);
+    width:100%; padding:14px; border:none; border-radius:8px;
+    background:var(--blue-2);
+    color:#fff; font-size:15px; font-weight:500; font-family:inherit; margin-top:12px; cursor:pointer;
   }
-  .btn-primary:active{ transform:scale(0.97); box-shadow:0 4px 10px rgba(29,79,196,0.2); }
+  .btn-primary:active{ background:#173F9E; }
   .btn-primary:disabled{ opacity:0.45; cursor:not-allowed; }
   .login-hint{ font-size:12.5px; color:var(--text-3); margin-top:22px; line-height:1.6; }
   .login-switch{ font-size:13px; color:var(--text-2); margin-top:20px; }
-  .link-accent{ color:var(--blue-2); font-weight:600; cursor:pointer; margin-left:4px; }
+  .link-accent{ color:var(--blue-2); font-weight:500; cursor:pointer; margin-left:4px; }
 
   /* ---------- consent screen ---------- */
   .consent-wrap{ padding:24px 24px 100px; }
   .consent-header{ display:flex; align-items:center; gap:14px; margin-bottom:20px; }
   .consent-company{ font-size:12px; color:var(--text-2); }
-  .consent-title{ font-size:21px; font-weight:700; letter-spacing:-0.02em; }
+  .consent-title{ font-size:20px; font-weight:600; }
   .consent-desc{ font-size:13.5px; color:var(--text-2); line-height:1.7; margin-bottom:24px; }
   .consent-block{ background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:18px; margin-bottom:14px; }
-  .consent-block-title{ font-size:14.5px; font-weight:600; margin-bottom:12px; }
+  .consent-block-title{ font-size:14.5px; font-weight:500; margin-bottom:12px; }
   .consent-item{ margin-bottom:14px; }
   .consent-item:last-child{ margin-bottom:0; }
-  .consent-item-title{ font-size:13.5px; font-weight:600; margin-bottom:2px; }
+  .consent-item-title{ font-size:13.5px; font-weight:500; margin-bottom:2px; }
   .consent-item-desc{ font-size:12.5px; color:var(--text-2); line-height:1.6; }
-  .consent-link{ display:block; font-size:13px; color:var(--blue-2); font-weight:600; margin-top:16px; word-break:break-all; }
+  .consent-link{ display:block; font-size:13px; color:var(--blue-2); font-weight:500; margin-top:16px; word-break:break-all; }
   .consent-check-row{ display:flex; align-items:flex-start; gap:12px; padding:16px 4px; margin-top:6px; cursor:pointer; }
   .consent-checkbox{
-    width:20px; height:20px; border-radius:6px; border:1.5px solid var(--line);
-    flex-shrink:0; margin-top:1px; display:flex; align-items:center; justify-content:center; transition:all .15s ease;
+    width:20px; height:20px; border-radius:4px; border:1px solid #999;
+    flex-shrink:0; margin-top:1px; display:flex; align-items:center; justify-content:center;
   }
-  .consent-checkbox.checked{ background:linear-gradient(135deg, var(--blue-1), var(--blue-2)); border-color:transparent; }
+  .consent-checkbox.checked{ background:var(--blue-2); border-color:var(--blue-2); }
   .consent-check-text{ font-size:13px; color:var(--text-2); line-height:1.6; text-align:left; }
 
   /* ---------- app shell ---------- */
   .page{ padding:8px 20px 100px; }
   .page-header{ display:flex; justify-content:space-between; align-items:center; margin:8px 0 16px; }
-  .page-title{ font-size:22px; font-weight:700; letter-spacing:-0.02em; }
+  .page-title{ font-size:22px; font-weight:600; }
   .page-count{ font-size:12.5px; color:var(--text-2); }
   .search-bar{
     display:flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--line);
-    border-radius:12px; padding:11px 14px; margin-bottom:18px;
+    border-radius:8px; padding:10px 14px; margin-bottom:18px;
   }
   .search-bar input{ border:none; outline:none; font-family:inherit; font-size:14px; flex:1; background:transparent; color:var(--text-1); }
   .search-bar input::placeholder{ color:var(--text-3); }
@@ -98,80 +96,79 @@
   .card{
     background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
     padding:16px; margin-bottom:12px; cursor:pointer;
-    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
   }
-  .card:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(15,17,21,0.06); border-color:#DCE1E8; }
+  .card:active{ border-color:var(--blue-2); }
   .card-top{ display:flex; align-items:flex-start; gap:12px; margin-bottom:8px; }
   .card-icon{ flex-shrink:0; margin-top:1px; }
   .card-main{ flex:1; min-width:0; }
-  .card-title{ font-size:14.5px; font-weight:600; margin-bottom:2px; }
+  .card-title{ font-size:14.5px; font-weight:500; margin-bottom:2px; }
   .card-sub{ font-size:12.5px; color:var(--text-2); }
-  .badge{ font-size:11px; font-weight:600; padding:4px 10px; border-radius:20px; white-space:nowrap; flex-shrink:0; }
-  .badge-upcoming{ background:linear-gradient(135deg, rgba(79,155,255,0.14), rgba(29,79,196,0.14)); color:var(--blue-2); }
-  .badge-done{ background:#F1F3F5; color:var(--text-2); }
-  .badge-progress{ background:#FDF3E3; color:#9A6B0C; }
+  .badge{ font-size:11.5px; font-weight:500; padding:3px 8px; border-radius:4px; white-space:nowrap; flex-shrink:0; border:1px solid currentColor; background:#fff; }
+  .badge-upcoming{ color:var(--blue-2); }
+  .badge-done{ color:var(--text-2); }
+  .badge-progress{ color:#B26A00; }
   .card-meta{ font-size:12.5px; color:var(--text-2); display:flex; align-items:center; gap:8px; flex-wrap:wrap; padding-left:44px; }
 
   /* ---------- bottom nav ---------- */
   .bottom-nav{
-    position:fixed; bottom:0; left:0; right:0; max-width:480px; margin:0 auto; background:rgba(255,255,255,0.92); backdrop-filter:blur(20px);
+    position:fixed; bottom:0; left:0; right:0; max-width:480px; margin:0 auto; background:#fff;
     border-top:1px solid var(--line); display:flex; justify-content:space-around; padding:10px 6px calc(10px + 18px);
   }
-  .nav-item{ display:flex; flex-direction:column; align-items:center; gap:4px; font-size:9.5px; color:var(--text-3); font-weight:500; cursor:pointer; width:64px; text-align:center; }
+  .nav-item{ display:flex; flex-direction:column; align-items:center; gap:4px; font-size:10px; color:var(--text-3); font-weight:400; cursor:pointer; width:64px; text-align:center; }
   .nav-item span{ white-space:nowrap; }
   .nav-item.active{ color:var(--blue-2); }
 
   /* ---------- bottom sheet ---------- */
-  .sheet-overlay{ position:fixed; inset:0; max-width:480px; margin:0 auto; background:rgba(15,17,21,0.4); display:flex; align-items:flex-end; z-index:10; }
-  .sheet{ width:100%; background:#fff; border-radius:24px 24px 0 0; padding:12px 24px 34px; animation:slideUp .32s cubic-bezier(.32,.72,0,1); max-height:82%; overflow-y:auto; }
+  .sheet-overlay{ position:fixed; inset:0; max-width:480px; margin:0 auto; background:rgba(0,0,0,0.4); display:flex; align-items:flex-end; z-index:10; }
+  .sheet{ width:100%; background:#fff; border-radius:14px 14px 0 0; padding:12px 24px 34px; animation:slideUp .32s cubic-bezier(.32,.72,0,1); max-height:82%; overflow-y:auto; }
   @keyframes slideUp{ from{transform:translateY(100%);} to{transform:translateY(0);} }
-  .sheet-handle{ width:36px; height:4px; background:#E3E5E9; border-radius:10px; margin:0 auto 20px; }
-  .sheet-title{ font-size:19px; font-weight:700; margin-bottom:4px; }
+  .sheet-handle{ width:36px; height:4px; background:#CCC; border-radius:10px; margin:0 auto 20px; }
+  .sheet-title{ font-size:18px; font-weight:600; margin-bottom:4px; }
   .sheet-sub{ font-size:13px; color:var(--text-2); margin-bottom:18px; }
-  .detail-row{ display:flex; justify-content:space-between; align-items:flex-start; padding:12px 0; border-bottom:1px solid #F1F2F4; font-size:13.5px; gap:12px; }
+  .detail-row{ display:flex; justify-content:space-between; align-items:flex-start; padding:12px 0; border-bottom:1px solid var(--line); font-size:13.5px; gap:12px; }
   .detail-row:last-of-type{ border-bottom:none; }
   .detail-label{ color:var(--text-2); flex-shrink:0; }
-  .detail-value{ font-weight:600; text-align:right; }
+  .detail-value{ font-weight:500; text-align:right; }
   .photo-thumb{
-    width:100%; height:130px; border-radius:12px; background:#F5F6F7; border:1px solid var(--line);
+    width:100%; height:130px; border-radius:8px; background:#fff; border:1px dashed #BBB;
     display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; color:var(--text-3); font-size:12px; margin-top:14px;
   }
   .sheet-close{
-    width:100%; padding:14px; border-radius:12px; border:1px solid var(--line); background:#fff;
-    font-family:inherit; font-size:14.5px; font-weight:600; color:var(--text-1); margin-top:20px; cursor:pointer;
+    width:100%; padding:13px; border-radius:8px; border:1px solid var(--line); background:#fff;
+    font-family:inherit; font-size:14.5px; font-weight:500; color:var(--text-1); margin-top:20px; cursor:pointer;
   }
-  .sheet-close:hover{ background:#F7F8F9; }
+  .sheet-close:active{ border-color:var(--text-1); }
 
   /* ---------- account page ---------- */
   .account-hero{ display:flex; align-items:center; gap:14px; padding:8px 0 22px; }
   .account-avatar-lg{
     width:58px; height:58px; border-radius:50%; flex-shrink:0;
-    background:linear-gradient(135deg, var(--blue-1), var(--blue-2));
-    display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:19px;
+    background:var(--blue-2);
+    display:flex; align-items:center; justify-content:center; color:#fff; font-weight:500; font-size:19px;
   }
-  .account-name{ font-size:18px; font-weight:700; margin-bottom:2px; }
+  .account-name{ font-size:18px; font-weight:600; margin-bottom:2px; }
   .account-company{ font-size:13px; color:var(--text-2); }
   .account-edit-btn{
-    margin-left:auto; font-size:13px; font-weight:600; color:var(--blue-2); background:none; border:none;
+    margin-left:auto; font-size:13px; font-weight:500; color:var(--blue-2); background:none; border:none;
     cursor:pointer; flex-shrink:0; font-family:inherit; padding:6px 4px;
   }
-  .account-section-title{ font-size:13.5px; font-weight:600; color:var(--text-1); margin:20px 2px 10px; }
+  .account-section-title{ font-size:13.5px; font-weight:500; color:var(--text-1); margin:20px 2px 10px; }
   .account-row{
     display:flex; align-items:center; gap:12px; background:var(--card); border:1px solid var(--line);
-    border-radius:14px; padding:14px 16px; margin-bottom:10px;
+    border-radius:10px; padding:13px 16px; margin-bottom:10px;
   }
   .account-row-label{ font-size:11.5px; color:var(--text-3); margin-bottom:2px; }
-  .account-row-value{ font-size:13.5px; font-weight:600; }
+  .account-row-value{ font-size:13.5px; font-weight:500; }
   .field-input{
-    width:100%; border:1px solid var(--blue-1); border-radius:8px; padding:6px 8px;
-    font-family:inherit; font-size:13.5px; font-weight:600; outline:none;
+    width:100%; border:1px solid var(--blue-2); border-radius:6px; padding:6px 8px;
+    font-family:inherit; font-size:13.5px; font-weight:500; outline:none;
   }
   .locked-row{ opacity:0.75; }
   .btn-logout{
-    width:100%; padding:14px; border-radius:12px; border:1px solid var(--line); background:#fff;
-    color:#B23A3A; font-family:inherit; font-size:14px; font-weight:600; margin-top:22px; cursor:pointer;
+    width:100%; padding:13px; border-radius:8px; border:1px solid var(--line); background:#fff;
+    color:#B23A3A; font-family:inherit; font-size:14px; font-weight:500; margin-top:22px; cursor:pointer;
   }
-  .btn-logout:hover{ background:#F7F8F9; }
+  .btn-logout:active{ border-color:#B23A3A; }
 
   .hidden{ display:none; }
 </style>
@@ -202,8 +199,8 @@
       <div class="login-sub" data-th="เข้าสู่ระบบเพื่อดูนัดหมายและ<br>ประวัติการซ่อมของคุณ" data-en="Sign in to view your appointments<br>and service history">เข้าสู่ระบบเพื่อดูนัดหมายและ<br>ประวัติการซ่อมของคุณ</div>
 
       <div class="input-group">
-        <span class="input-label" data-th="อีเมล" data-en="Email">อีเมล</span>
-        <input class="input-field" type="text" data-ph-th="อีเมลของคุณ" data-ph-en="Your email" placeholder="อีเมลของคุณ">
+        <span class="input-label" data-th="Username" data-en="Username">Username</span>
+        <input class="input-field" type="text" data-ph-th="ชื่อผู้ใช้ของคุณ" data-ph-en="Your username" placeholder="ชื่อผู้ใช้ของคุณ">
       </div>
       <div class="input-group">
         <span class="input-label" data-th="รหัสผ่าน" data-en="Password">รหัสผ่าน</span>
@@ -291,140 +288,52 @@
     <!-- ---- นัดหมาย ---- -->
     <div class="page" id="pageAppointments">
       <div class="page-header">
-        <div><div class="page-title" data-th="นัดหมาย" data-en="Appointments">นัดหมาย</div><div class="page-count" data-th="2 รายการที่กำลังจะถึง" data-en="2 upcoming">2 รายการที่กำลังจะถึง</div></div>
+        <div><div class="page-title" data-th="นัดหมาย" data-en="Appointments">นัดหมาย</div><div class="page-count" id="countAppointments"></div></div>
       </div>
       <div class="search-bar">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
         <input type="text" oninput="filterCards('pageAppointments', this.value)" data-ph-th="ค้นหานัดหมาย, Service No." data-ph-en="Search appointments, service no." placeholder="ค้นหานัดหมาย, Service No.">
       </div>
       <div id="listAppointments">
-        <div class="card" data-search="บริษัท ไทยฟู้ดส์ จำกัด บำรุงรักษาเครื่องตัดผ้า A102 SV-2569-0142" onclick="openSheet('appt1')">
-          <div class="card-top">
-            <svg class="card-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
-            <div class="card-main">
-              <div class="card-title">บริษัท ไทยฟู้ดส์ จำกัด</div>
-              <div class="card-sub" data-th="บำรุงรักษาเครื่องตัดผ้า #A102" data-en="Maintenance — cutter #A102">บำรุงรักษาเครื่องตัดผ้า #A102</div>
-            </div>
-            <span class="badge badge-upcoming" data-th="ยืนยันแล้ว" data-en="Confirmed">ยืนยันแล้ว</span>
-          </div>
-          <div class="card-meta"><span>15 ก.ย. 2569 · 09:30 น.</span><span class="mono">SV-2569-0142</span></div>
-        </div>
-        <div class="card" data-search="บริษัท ไทยฟู้ดส์ จำกัด ตรวจเช็คมอเตอร์ประจำปี SV-2569-0158" onclick="openSheet('appt2')">
-          <div class="card-top">
-            <svg class="card-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
-            <div class="card-main">
-              <div class="card-title">บริษัท ไทยฟู้ดส์ จำกัด</div>
-              <div class="card-sub" data-th="ตรวจเช็คมอเตอร์ประจำปี" data-en="Annual motor inspection">ตรวจเช็คมอเตอร์ประจำปี</div>
-            </div>
-            <span class="badge badge-upcoming" data-th="รอยืนยัน" data-en="Pending">รอยืนยัน</span>
-          </div>
-          <div class="card-meta"><span>22 ก.ย. 2569 · 13:00 น.</span><span class="mono">SV-2569-0158</span></div>
-        </div>
-        <div class="search-empty hidden" data-th="ไม่พบรายการที่ค้นหา" data-en="No matching results">ไม่พบรายการที่ค้นหา</div>
+        <div class="search-empty" data-th="ยังไม่มีข้อมูล เข้าสู่ระบบเพื่อดูนัดหมายของคุณ" data-en="No data yet — sign in to see your appointments">ยังไม่มีข้อมูล เข้าสู่ระบบเพื่อดูนัดหมายของคุณ</div>
       </div>
     </div>
 
     <!-- ---- เครื่องจักร ---- -->
     <div class="page hidden" id="pageMachines">
       <div class="page-header">
-        <div><div class="page-title" data-th="เครื่องจักร" data-en="Machines">เครื่องจักร</div><div class="page-count" data-th="3 เครื่องในระบบ" data-en="3 registered">3 เครื่องในระบบ</div></div>
+        <div><div class="page-title" data-th="เครื่องจักร" data-en="Machines">เครื่องจักร</div><div class="page-count" id="countMachines"></div></div>
       </div>
       <div class="search-bar">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
         <input type="text" oninput="filterCards('pageMachines', this.value)" data-ph-th="ค้นหารุ่นเครื่อง, Serial Number" data-ph-en="Search model, serial number" placeholder="ค้นหารุ่นเครื่อง, Serial Number">
       </div>
       <div id="listMachines">
-        <div class="card" data-search="ห้องเย็น รุ่น CR-4500 CR4500-2201-089" onclick="openSheet('mc1')">
-          <div class="card-top">
-            <svg class="card-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            <div class="card-main">
-              <div class="card-title">ห้องเย็น รุ่น CR-4500</div>
-              <div class="card-sub mono">CR4500-2201-089</div>
-            </div>
-            <span class="badge badge-upcoming" data-th="ในประกัน" data-en="Under warranty">ในประกัน</span>
-          </div>
-          <div class="card-meta" data-th="ห้องเย็นควบคุมอุณหภูมิ · น้ำยา R404A" data-en="Temperature-controlled room · R404A">ห้องเย็นควบคุมอุณหภูมิ · น้ำยา R404A</div>
-        </div>
-        <div class="card" data-search="เครื่องทำความเย็น รุ่น FR-220 FR220-2019-014" onclick="openSheet('mc2')">
-          <div class="card-top">
-            <svg class="card-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            <div class="card-main">
-              <div class="card-title">เครื่องทำความเย็น รุ่น FR-220</div>
-              <div class="card-sub mono">FR220-2019-014</div>
-            </div>
-            <span class="badge badge-done" data-th="หมดประกัน" data-en="Expired">หมดประกัน</span>
-          </div>
-          <div class="card-meta" data-th="ห้องแช่แข็ง · น้ำยา R22" data-en="Freezer room · R22">ห้องแช่แข็ง · น้ำยา R22</div>
-        </div>
-        <div class="card" data-search="คอมเพรสเซอร์ รุ่น CP-90 CP90-2023-301">
-          <div class="card-top">
-            <svg class="card-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            <div class="card-main">
-              <div class="card-title">คอมเพรสเซอร์ รุ่น CP-90</div>
-              <div class="card-sub mono">CP90-2023-301</div>
-            </div>
-            <span class="badge badge-upcoming" data-th="ในประกัน" data-en="Under warranty">ในประกัน</span>
-          </div>
-          <div class="card-meta" data-th="ห้องเย็นควบคุมอุณหภูมิ · น้ำยา R410A" data-en="Temperature-controlled room · R410A">ห้องเย็นควบคุมอุณหภูมิ · น้ำยา R410A</div>
-        </div>
-        <div class="search-empty hidden" data-th="ไม่พบรายการที่ค้นหา" data-en="No matching results">ไม่พบรายการที่ค้นหา</div>
+        <div class="search-empty" data-th="ยังไม่มีข้อมูล เข้าสู่ระบบเพื่อดูเครื่องจักรของคุณ" data-en="No data yet — sign in to see your machines">ยังไม่มีข้อมูล เข้าสู่ระบบเพื่อดูเครื่องจักรของคุณ</div>
       </div>
     </div>
 
     <!-- ---- ประวัติการซ่อม ---- -->
     <div class="page hidden" id="pageRepair">
       <div class="page-header">
-        <div><div class="page-title" data-th="ประวัติการซ่อม" data-en="Service history">ประวัติการซ่อม</div><div class="page-count" data-th="14 รายการทั้งหมด" data-en="14 records total">14 รายการทั้งหมด</div></div>
+        <div><div class="page-title" data-th="ประวัติการซ่อม" data-en="Service history">ประวัติการซ่อม</div><div class="page-count" id="countRepairs"></div></div>
       </div>
       <div class="search-bar">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
         <input type="text" oninput="filterCards('pageRepair', this.value)" data-ph-th="ค้นหาอาการ, Service No." data-ph-en="Search issue, service no." placeholder="ค้นหาอาการ, Service No.">
       </div>
       <div id="listRepair">
-        <div class="card" data-search="เปลี่ยนสายพานเครื่องปัก คุณสมชาย ช่างวินัย SV-2569-0098" onclick="openSheet('rp1')">
-          <div class="card-top">
-            <svg class="card-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            <div class="card-main">
-              <div class="card-title" data-th="เปลี่ยนสายพานเครื่องปัก" data-en="Replaced embroidery machine belt">เปลี่ยนสายพานเครื่องปัก</div>
-              <div class="card-sub" data-th="แจ้งโดย: คุณสมชาย" data-en="Reported by Somchai">แจ้งโดย: คุณสมชาย</div>
-            </div>
-            <span class="badge badge-done" data-th="เสร็จสิ้น" data-en="Completed">เสร็จสิ้น</span>
-          </div>
-          <div class="card-meta"><span>2 ก.ย. 2569 · <span data-th="ช่างวินัย" data-en="Tech. Winai">ช่างวินัย</span></span><span class="mono">SV-2569-0098</span></div>
-        </div>
-        <div class="card" data-search="คอมเพรสเซอร์เสียงดังผิดปกติ คุณสมชาย ช่างอนันต์ SV-2569-0161" onclick="openSheet('rp2')">
-          <div class="card-top">
-            <svg class="card-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            <div class="card-main">
-              <div class="card-title" data-th="คอมเพรสเซอร์เสียงดังผิดปกติ" data-en="Compressor unusual noise">คอมเพรสเซอร์เสียงดังผิดปกติ</div>
-              <div class="card-sub" data-th="แจ้งโดย: คุณสมชาย" data-en="Reported by Somchai">แจ้งโดย: คุณสมชาย</div>
-            </div>
-            <span class="badge badge-progress" data-th="กำลังดำเนินการ" data-en="In progress">กำลังดำเนินการ</span>
-          </div>
-          <div class="card-meta"><span>8 ก.ย. 2569 · <span data-th="ช่างอนันต์" data-en="Tech. Anan">ช่างอนันต์</span></span><span class="mono">SV-2569-0161</span></div>
-        </div>
-        <div class="card" data-search="น้ำยาแอร์รั่ว เติมน้ำยาเพิ่ม คุณประภา ช่างวินัย SV-2569-0071">
-          <div class="card-top">
-            <svg class="card-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            <div class="card-main">
-              <div class="card-title" data-th="น้ำยาแอร์รั่ว เติมน้ำยาเพิ่ม" data-en="Refrigerant leak — recharged">น้ำยาแอร์รั่ว เติมน้ำยาเพิ่ม</div>
-              <div class="card-sub" data-th="แจ้งโดย: คุณประภา" data-en="Reported by Prapha">แจ้งโดย: คุณประภา</div>
-            </div>
-            <span class="badge badge-done" data-th="เสร็จสิ้น" data-en="Completed">เสร็จสิ้น</span>
-          </div>
-          <div class="card-meta"><span>19 ส.ค. 2569 · <span data-th="ช่างวินัย" data-en="Tech. Winai">ช่างวินัย</span></span><span class="mono">SV-2569-0071</span></div>
-        </div>
-        <div class="search-empty hidden" data-th="ไม่พบรายการที่ค้นหา" data-en="No matching results">ไม่พบรายการที่ค้นหา</div>
+        <div class="search-empty" data-th="ยังไม่มีข้อมูล เข้าสู่ระบบเพื่อดูประวัติการซ่อมของคุณ" data-en="No data yet — sign in to see your service history">ยังไม่มีข้อมูล เข้าสู่ระบบเพื่อดูประวัติการซ่อมของคุณ</div>
       </div>
     </div>
 
     <!-- ---- บัญชีของฉัน ---- -->
     <div class="page hidden" id="pageAccount">
       <div class="account-hero">
-        <div class="account-avatar-lg">สช</div>
+        <div class="account-avatar-lg" id="accountAvatar">—</div>
         <div style="flex:1; min-width:0;">
-          <div class="account-name" data-th="สวัสดี, คุณสมชาย" data-en="Hello, Somchai">สวัสดี, คุณสมชาย</div>
-          <div class="account-company">บริษัท ไทยฟู้ดส์ จำกัด</div>
+          <div class="account-name" id="accountGreeting">สวัสดี</div>
+          <div class="account-company" id="accountCompany"></div>
         </div>
         <button class="account-edit-btn" id="editToggleBtn" onclick="toggleEdit()" data-th="แก้ไข" data-en="Edit">แก้ไข</button>
       </div>
@@ -432,25 +341,25 @@
       <div class="account-section-title" data-th="ข้อมูลติดต่อ" data-en="Contact information">ข้อมูลติดต่อ</div>
       <div class="account-row" data-field>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9 6 9-6M5 6h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z"/></svg>
-        <div style="flex:1; min-width:0;"><div class="account-row-label" data-th="อีเมล" data-en="Email">อีเมล</div><div class="account-row-value" data-value>somchai@thaifoods.co.th</div></div>
+        <div style="flex:1; min-width:0;"><div class="account-row-label" data-th="อีเมล" data-en="Email">อีเมล</div><div class="account-row-value" data-value id="fieldEmail">—</div></div>
       </div>
       <div class="account-row" data-field>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.902.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.908.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        <div style="flex:1; min-width:0;"><div class="account-row-label" data-th="เบอร์โทรศัพท์" data-en="Phone">เบอร์โทรศัพท์</div><div class="account-row-value" data-value>081-234-5678</div></div>
+        <div style="flex:1; min-width:0;"><div class="account-row-label" data-th="เบอร์โทรศัพท์" data-en="Phone">เบอร์โทรศัพท์</div><div class="account-row-value" data-value id="fieldPhone">—</div></div>
       </div>
       <div class="account-row" data-field>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <div style="flex:1; min-width:0;"><div class="account-row-label" data-th="ที่อยู่" data-en="Address">ที่อยู่</div><div class="account-row-value" data-value>99/1 ถ.สุขาภิบาล 3 กรุงเทพฯ 10510</div></div>
+        <div style="flex:1; min-width:0;"><div class="account-row-label" data-th="ที่อยู่" data-en="Address">ที่อยู่</div><div class="account-row-value" data-value id="fieldAddress">—</div></div>
       </div>
 
       <div class="account-section-title" data-th="บริษัท" data-en="Company">บริษัท</div>
       <div class="account-row" data-field>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
-        <div style="flex:1; min-width:0;"><div class="account-row-label" data-th="ชื่อบริษัท" data-en="Company name">ชื่อบริษัท</div><div class="account-row-value" data-value>บริษัท ไทยฟู้ดส์ จำกัด</div></div>
+        <div style="flex:1; min-width:0;"><div class="account-row-label" data-th="ชื่อบริษัท" data-en="Company name">ชื่อบริษัท</div><div class="account-row-value" data-value id="fieldCompany">—</div></div>
       </div>
       <div class="account-row locked-row">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
-        <div style="flex:1; min-width:0;"><div class="account-row-label" data-th="รหัสลูกค้า" data-en="Customer ID">รหัสลูกค้า</div><div class="account-row-value mono">CUST-00214</div></div>
+        <div style="flex:1; min-width:0;"><div class="account-row-label" data-th="รหัสลูกค้า" data-en="Customer ID">รหัสลูกค้า</div><div class="account-row-value mono" id="fieldCustId">—</div></div>
       </div>
 
       <div class="account-section-title" data-th="เกี่ยวกับ" data-en="About">เกี่ยวกับ</div>
@@ -590,20 +499,7 @@ function toggleEdit(){
   });
 }
 
-const sheets = {
-  appt1: { title:'บำรุงรักษาเครื่องตัดผ้า #A102', sub:'Service No. SV-2569-0142',
-    rows:[['ชื่อลูกค้า','คุณสมชาย ใจดี'],['บริษัท/ที่อยู่','บริษัท ไทยฟู้ดส์ จำกัด'],['วันที่','15 ก.ย. 2569'],['เวลา','09:30 น.'],['รายละเอียด','ตรวจเช็คและบำรุงรักษาเครื่องตัดผ้าตามรอบ'],['สถานะ','ยืนยันแล้ว']] },
-  appt2: { title:'ตรวจเช็คมอเตอร์ประจำปี', sub:'Service No. SV-2569-0158',
-    rows:[['ชื่อลูกค้า','คุณสมชาย ใจดี'],['บริษัท/ที่อยู่','บริษัท ไทยฟู้ดส์ จำกัด'],['วันที่','22 ก.ย. 2569'],['เวลา','13:00 น.'],['รายละเอียด','ตรวจเช็คมอเตอร์และระบบไฟฟ้าประจำปี'],['สถานะ','รอยืนยัน']] },
-  mc1:{ title:'ห้องเย็น รุ่น CR-4500', sub:'S/N: CR4500-2201-089',
-    rows:[['ชื่อลูกค้า/บริษัท','บริษัท ไทยฟู้ดส์ จำกัด'],['รุ่นเครื่อง','CR-4500'],['Serial Number','CR4500-2201-089'],['วันที่เริ่มรับประกัน','10 ม.ค. 2568'],['ประเภทห้องเย็น','ห้องเย็นควบคุมอุณหภูมิ'],['น้ำยาที่ใช้','R404A'],['อื่นๆ','ติดตั้งพร้อมระบบสำรองไฟ']], photo:'รูปเพลตเครื่อง' },
-  mc2:{ title:'เครื่องทำความเย็น รุ่น FR-220', sub:'S/N: FR220-2019-014',
-    rows:[['ชื่อลูกค้า/บริษัท','บริษัท ไทยฟู้ดส์ จำกัด'],['รุ่นเครื่อง','FR-220'],['Serial Number','FR220-2019-014'],['วันที่เริ่มรับประกัน','3 มี.ค. 2562'],['ประเภทห้องเย็น','ห้องแช่แข็ง'],['น้ำยาที่ใช้','R22'],['อื่นๆ','-']], photo:'รูปเพลตเครื่อง' },
-  rp1:{ title:'เปลี่ยนสายพานเครื่องปัก', sub:'Service No. SV-2569-0098',
-    rows:[['ผู้แจ้งซ่อม','คุณสมชาย ใจดี'],['อาการที่พบ','สายพานเครื่องปักขาด เครื่องหยุดทำงาน'],['วันที่ซ่อม','2 ก.ย. 2569'],['ช่างผู้ดำเนินการ','คุณวินัย ใจดี'],['สถานะ','เสร็จสิ้น'],['รายละเอียด','เปลี่ยนสายพานใหม่และปรับตั้งความตึง']], photo:'รูปใบงาน' },
-  rp2:{ title:'คอมเพรสเซอร์เสียงดังผิดปกติ', sub:'Service No. SV-2569-0161',
-    rows:[['ผู้แจ้งซ่อม','คุณสมชาย ใจดี'],['อาการที่พบ','คอมเพรสเซอร์มีเสียงดังผิดปกติขณะทำงาน'],['วันที่ซ่อม','8 ก.ย. 2569'],['ช่างผู้ดำเนินการ','คุณอนันต์ สุขใจ'],['สถานะ','กำลังดำเนินการ'],['รายละเอียด','อยู่ระหว่างตรวจสอบและสั่งอะไหล่ทดแทน']], photo:'รูปใบงาน' }
-};
+let sheets = {};
 
 const i18nDict = {
   'ชื่อลูกค้า':'Customer name',
@@ -675,30 +571,131 @@ function openSheet(key){
     appId: "1:536137022963:web:eb1eaa8e9beb6698cfe686"
   };
 
+  // TODO: replace with your real Apps Script Web App URL (ends with /exec) — see firebase-setup-guide.md Phase 2
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwVBv7HmZNgoCg8J0_17tY1EGdFuD4nNH9BqEn72IuUfjekP9TZasvyD_8qdRXQQFPCnw/exec";
+
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-  window.doLogin = function () {
-    const email = document.querySelector('#loginScreen input[type="text"]').value.trim();
+  window.doLogin = async function () {
+    const username = document.querySelector('#loginScreen input[type="text"]').value.trim();
     const password = document.querySelector('#loginScreen input[type="password"]').value;
-    if (!email || !password) {
-      alert('กรุณากรอกอีเมลและรหัสผ่าน');
+    if (!username || !password) {
+      alert('กรุณากรอก Username และรหัสผ่าน');
       return;
     }
-    signInWithEmailAndPassword(auth, email, password)
-      .then(() => showScreen('appScreen'))
-      .catch((err) => {
-        let msg = 'เข้าสู่ระบบไม่สำเร็จ';
-        if (err.code === 'auth/invalid-credential' || err.code === 'auth/wrong-password' || err.code === 'auth/user-not-found') {
-          msg = 'อีเมลหรือรหัสผ่านไม่ถูกต้อง';
-        }
-        alert(msg);
-      });
+    try {
+      const lookupRes = await fetch(APPS_SCRIPT_URL + '?action=lookupEmail&username=' + encodeURIComponent(username));
+      const lookup = await lookupRes.json();
+      if (lookup.error) {
+        alert('ไม่พบผู้ใช้นี้ในระบบ');
+        return;
+      }
+      await signInWithEmailAndPassword(auth, lookup.email, password);
+      await loadCustomerData(lookup.custId);
+      showScreen('appScreen');
+    } catch (err) {
+      let msg = 'เข้าสู่ระบบไม่สำเร็จ';
+      if (err.code === 'auth/invalid-credential' || err.code === 'auth/wrong-password' || err.code === 'auth/user-not-found') {
+        msg = 'Username หรือรหัสผ่านไม่ถูกต้อง';
+      }
+      alert(msg);
+    }
   };
 
   window.doLogout = function () {
     signOut(auth).then(() => showScreen('loginScreen'));
   };
+
+  async function loadCustomerData(custId) {
+    const res = await fetch(APPS_SCRIPT_URL + '?action=customerData&custId=' + encodeURIComponent(custId));
+    const data = await res.json();
+    renderAccount(data.profile || {});
+    renderAppointments(data.appointments || []);
+    renderMachines(data.machines || []);
+    renderRepairs(data.repairs || []);
+  }
+
+  function renderAccount(p) {
+    const initials = (p.name || '').replace(/^(คุณ|นาย|นาง|นางสาว)\s*/, '').trim().slice(0, 2) || '—';
+    document.getElementById('accountAvatar').textContent = initials;
+    document.getElementById('accountGreeting').textContent = 'สวัสดี, ' + (p.name || '');
+    document.getElementById('accountCompany').textContent = p.company || '';
+    document.getElementById('fieldEmail').textContent = p.email || '';
+    document.getElementById('fieldPhone').textContent = p.phone || '';
+    document.getElementById('fieldAddress').textContent = p.address || '';
+    document.getElementById('fieldCompany').textContent = p.company || '';
+    document.getElementById('fieldCustId').textContent = p.custId || '';
+  }
+
+  function cardIcon(pathD) {
+    return '<svg class="card-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + pathD + '</svg>';
+  }
+  const ICON_CALENDAR = '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/>';
+  const ICON_LAYERS = '<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>';
+  const ICON_CLOCK = '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>';
+
+  function badgeClass(status) {
+    if (status === 'ยืนยันแล้ว' || status === 'ในประกัน' || status === 'เสร็จสิ้น') return 'badge-upcoming';
+    if (status === 'กำลังดำเนินการ') return 'badge-progress';
+    return 'badge-done';
+  }
+
+  function renderAppointments(list) {
+    sheets = sheets || {};
+    const cardsHtml = list.map((a, i) => {
+      const key = 'appt' + i;
+      sheets[key] = {
+        title: a.detail, sub: 'Service No. ' + a.service,
+        rows: [['ชื่อลูกค้า', a.name || ''], ['บริษัท/ที่อยู่', a.company || ''], ['วันที่', a.date], ['เวลา', a.time], ['รายละเอียด', a.detail], ['สถานะ', a.status]]
+      };
+      return '<div class="card" data-search="' + [a.company, a.detail, a.service].join(' ') + '" onclick="openSheet(\'' + key + '\')">' +
+        '<div class="card-top">' + cardIcon(ICON_CALENDAR) +
+        '<div class="card-main"><div class="card-title">' + (a.company || '') + '</div><div class="card-sub">' + a.detail + '</div></div>' +
+        '<span class="badge ' + badgeClass(a.status) + '">' + a.status + '</span></div>' +
+        '<div class="card-meta"><span>' + a.date + ' · ' + a.time + '</span><span class="mono">' + a.service + '</span></div></div>';
+    }).join('');
+    document.getElementById('listAppointments').innerHTML = cardsHtml + '<div class="search-empty hidden" data-th="ไม่พบรายการที่ค้นหา" data-en="No matching results">ไม่พบรายการที่ค้นหา</div>';
+    document.getElementById('countAppointments').textContent = list.length + (currentLang === 'en' ? ' appointments' : ' นัดหมาย');
+  }
+
+  function renderMachines(list) {
+    sheets = sheets || {};
+    const cardsHtml = list.map((m, i) => {
+      const key = 'mc' + i;
+      sheets[key] = {
+        title: m.model, sub: 'S/N: ' + m.serial,
+        rows: [['ชื่อลูกค้า/บริษัท', m.company || ''], ['รุ่นเครื่อง', m.model], ['Serial Number', m.serial], ['วันที่เริ่มรับประกัน', m.warranty], ['ประเภทห้องเย็น', m.roomType], ['น้ำยาที่ใช้', m.refrigerant], ['อื่นๆ', m.notes || '-']],
+        photo: 'รูปเพลตเครื่อง'
+      };
+      return '<div class="card" data-search="' + [m.model, m.serial].join(' ') + '" onclick="openSheet(\'' + key + '\')">' +
+        '<div class="card-top">' + cardIcon(ICON_LAYERS) +
+        '<div class="card-main"><div class="card-title">' + m.model + '</div><div class="card-sub mono">' + m.serial + '</div></div>' +
+        '<span class="badge ' + badgeClass(m.status || '') + '">' + (m.status || '') + '</span></div>' +
+        '<div class="card-meta">' + (m.roomType || '') + ' · ' + (m.refrigerant || '') + '</div></div>';
+    }).join('');
+    document.getElementById('listMachines').innerHTML = cardsHtml + '<div class="search-empty hidden" data-th="ไม่พบรายการที่ค้นหา" data-en="No matching results">ไม่พบรายการที่ค้นหา</div>';
+    document.getElementById('countMachines').textContent = list.length + (currentLang === 'en' ? ' machines' : ' เครื่องในระบบ');
+  }
+
+  function renderRepairs(list) {
+    sheets = sheets || {};
+    const cardsHtml = list.map((r, i) => {
+      const key = 'rp' + i;
+      sheets[key] = {
+        title: r.issue, sub: 'Service No. ' + r.service,
+        rows: [['ผู้แจ้งซ่อม', r.reporter || ''], ['อาการที่พบ', r.issue], ['วันที่ซ่อม', r.date], ['ช่างผู้ดำเนินการ', r.tech], ['สถานะ', r.status], ['รายละเอียด', r.detail]],
+        photo: 'รูปใบงาน'
+      };
+      return '<div class="card" data-search="' + [r.issue, r.tech, r.service].join(' ') + '" onclick="openSheet(\'' + key + '\')">' +
+        '<div class="card-top">' + cardIcon(ICON_CLOCK) +
+        '<div class="card-main"><div class="card-title">' + r.issue + '</div><div class="card-sub">' + (r.reporter || '') + '</div></div>' +
+        '<span class="badge ' + badgeClass(r.status) + '">' + r.status + '</span></div>' +
+        '<div class="card-meta"><span>' + r.date + ' · ' + r.tech + '</span><span class="mono">' + r.service + '</span></div></div>';
+    }).join('');
+    document.getElementById('listRepair').innerHTML = cardsHtml + '<div class="search-empty hidden" data-th="ไม่พบรายการที่ค้นหา" data-en="No matching results">ไม่พบรายการที่ค้นหา</div>';
+    document.getElementById('countRepairs').textContent = list.length + (currentLang === 'en' ? ' records total' : ' รายการทั้งหมด');
+  }
 </script>
 
 </body>
